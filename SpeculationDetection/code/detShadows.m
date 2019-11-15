@@ -27,5 +27,10 @@ function callbackfn(SliderH,A,F,MASK_SHADOWS)
     TextH.String = num2str(num);
 %imshow(((F-A)>num));
 MASK_SHADOWS = (F(:,:,1)-A(:,:,1)) < num;
+se = exp(-(-20:20).^2/18);
+se = se'*se;
+MASK_SHADOWS = double(MASK_SHADOWS);
+%MASK_SHADOWS = imdilate(MASK_SHADOWS,se);
+MASK_SHADOWS = imfilter(MASK_SHADOWS,se);
 imshow(MASK_SHADOWS);
 end
