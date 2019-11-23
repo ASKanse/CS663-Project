@@ -4,7 +4,7 @@ function [img_flash, img_noflash, img_bilateral, img_result] = read_imgs(img_nam
     
     path_flash = path_prefix + "00_flash.tif";
     path_noflash = path_prefix + "01_noflash.tif";
-    path_bilateral = path_prefix + "02_bilateral.tif";
+    path_bilateral = path_prefix + "03_our_result.tif";
     path_result = path_prefix + "03_our_result.tif";
     
     img_flash = im2double(imread(char(path_flash)));

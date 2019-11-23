@@ -1,8 +1,8 @@
-function opImg=myBilateralFiltering(NoflashImg, flashImg, ss, is)
+function opImg=myBilateralFiltering(NoflashImg, flashImg, ss, is, ws)
 [r,c]=size(NoflashImg);
 %is=0.061; %intensity gaussian sigma
 %ss=1.8; %spacial gaussian sigma
-wind=7;  %window size
+wind=ws;  %window size
 hwind=floor(wind/2);
 %padding image to help apply filter to the image endings
 NoflashPIpImg = padarray(NoflashImg,[hwind hwind],-1,'both');
